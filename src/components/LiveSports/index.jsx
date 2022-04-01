@@ -17,16 +17,16 @@ const contents = [
     {
         title: "Live Sports",
         text: "Catch your games at home or on the go. Stream live games from major college and pro leagues including the NCAA®, NBA, NHL, NFL, and more.",
-        logos: ["/1/1.png", "/1/2.png", "/1/3.png", "/1/4.png"]
+        logos: ["/1/1.png", "/1/3.png", "/1/4.png", "/1/2.png"]
     },
     {
         title: "Breaking News",
         text: "Keep pace with what's going on locally and globally with trusted opinions from all the top news networks.",
-        logos: ["/2/1.png", "/2/2.svg", "/2/3.svg", "/2/4.png"]
+        logos: ["/2/1.png", "/2/3.svg", "/2/2.svg", "/2/4.png"]
     },
     {
-        title: "Live Sports",
-        text: "Catch your games at home or on the go. Stream live games from major college and pro leagues including the NCAA®, NBA, NHL, NFL, and more.",
+        title: "Biggest Events",
+        text: "Spectacular, can't-miss moments like the Olympics, Grammys®, Oscars®, Emmys®, and more.",
         logos: ["/3/1.png", "/3/2.png", "/3/3.png", "/3/4.png"]
     }
 ];
@@ -62,7 +62,7 @@ const LiveSports = () => {
             gsap.to(tabIndicator.current, {
                 duration: 0.4,
                 x: 0,
-                width: "78px",
+                width: "73px",
             });
         } else {
             gsap.to(tabIndicator.current, {
@@ -111,8 +111,18 @@ const LiveSports = () => {
 export default LiveSports;
 
 const Description = ({ title, text, logos = [] }) => {
+    const tabBody = useRef();
+    useEffect(() => {
+        gsap.fromTo(tabBody.current, {
+            y: 20,
+            opacity: "0%"
+        }, {
+            y: 0,
+            opacity: "100%",
+        })
+    })
     return (
-        <StyledDescription>
+        <StyledDescription ref={tabBody}>
             <h1>{title}</h1>
             <h2>{text}</h2>
             <StyledLogoList>
@@ -124,7 +134,7 @@ const Description = ({ title, text, logos = [] }) => {
                     ))
                 }
             </StyledLogoList>
-            {/* <p>{notice}</p> */}
+            <p>Live TV plan required. Regional restrictions, blackouts and additional terms apply. <a>See details</a></p>
         </StyledDescription>
     );
 }

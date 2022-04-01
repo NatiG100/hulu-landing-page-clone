@@ -48,7 +48,26 @@ export const StyledNavTabIndicator = styled.div`
 
 ////////////////////////////////////
 export const StyledDescription = styled.div`
-
+    h1{
+        color:white;
+        font-size:60px ;
+        font-weight:900 ;
+    }
+    h2{
+        color:white;
+        font-weight: 400;
+        font-size:26px ;
+    }
+    p{
+        color: white;
+        font-size:10px ;
+        opacity:70% ;
+        margin-top:40px ;
+    }
+    a{
+        text-decoration:underline ;
+        cursor: pointer;
+    }
 `;
 export const StyledLogoList = styled.div`
     display: flex;
@@ -61,6 +80,7 @@ export const StyledLogo = styled.div`
     background-color: white;
     display:flex ;
     align-items: center;
+    padding:2px;
     img{
         width:100% ;
     }
