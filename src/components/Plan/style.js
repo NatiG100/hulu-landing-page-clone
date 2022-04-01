@@ -8,7 +8,7 @@ export const StyledPlan = styled.div`
     justify-content:center ;
 `;
 export const StyledPlanContent = styled.div`
-    width: 900px;
+    width: 980px;
     display:flex ;
     flex-direction:column ;
     align-items:center ;
@@ -32,5 +32,76 @@ export const StyledPlanContent = styled.div`
 export const StyledPlanHeader = styled.div`
     width:max-content ;
 `;
-export const StyledPlanTableHeader = styled.div`
+
+export const StyledPlanTable = styled.div`
+    width: 100%;
 `;
+export const StyledPlanTableHeader = styled.div`
+    width:100% ;
+    border-top: 1px solid #0002;
+    border-bottom: 1px solid #0002;
+    margin-top: 60px;
+    padding-top:15px;
+    padding-bottom: 15px;
+    display:grid ;
+    grid-template-columns:2fr 1fr 1fr 1fr ;
+`;
+export const StyledBundle = styled.div`
+    max-width:250px ;
+    *{
+        text-align:left ;
+    }
+    display:flex ;
+    flex-direction:column ;
+    img{
+        height:40px ;
+        width:max-content ;
+    }
+    h2{
+        font-size:30px ;
+    }
+    p{
+        font-size:14px ;
+        font-weight:400 ;
+    }
+`;
+
+export const StyledBundleHeader = styled.div`
+    display:flex ;
+    align-items:center ;
+    gap:20px;
+    img{
+        height: 16px;
+    }
+`;
+
+
+
+///////////////SWITCH//////////////////
+export const StyledSwitch = styled.div`
+    cursor: pointer;
+    margin-top:15px ;
+    width:70px ;
+    height:30px ;
+    position:relative ;
+`;
+export const StyledSwitchRack = styled.div`
+    width:100% ;
+    height: 100%;
+    position:absolute ;
+    background-color:${({ isOn }) => isOn ? "black" : "#dedede"} ;
+    top:0px ;
+    left:0px ;
+    border-radius:40px;
+`;
+export const StyledSwitchKnob = styled.div`
+    background-color:white ;
+    height: 32px;
+    width:32px ;
+    position:absolute ;
+    box-shadow:0px 0px 7px #2224 ;
+    top:-1px ;
+    ${({ isOn }) => isOn ? "right:-1px;" : "left:-1px;"} 
+    border-radius: 40px;
+`;
+////////////////////////////
