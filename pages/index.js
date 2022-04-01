@@ -4,6 +4,7 @@ import Advertisment from '../src/components/Advertisment'
 import Header from '../src/components/Header'
 import LiveSports from '../src/components/LiveSports'
 import LiveTVSection from '../src/components/LiveTVSection'
+import Plan from '../src/components/Plan'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Advertisment />
       <LiveTVSection />
       <LiveSports />
+      <Plan />
     </>
   )
 }
