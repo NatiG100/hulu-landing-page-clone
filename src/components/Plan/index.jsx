@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LargeButton from '../buttons/LargeButton';
 
 import {
     StyledPlan,
@@ -10,7 +11,10 @@ import {
     StyledBundleHeader,
     StyledSwitchKnob,
     StyledSwitchRack,
-    StyledSwitch
+    StyledSwitch,
+    StyledBadge,
+    StyledPlanColumnHeader,
+    StyledPlanTableRow
 } from './style';
 
 const Plan = () => {
@@ -33,7 +37,25 @@ const Plan = () => {
                             isOn={isOn}
                             toggle={toggle}
                         />
+                        <PlanColumnHeader
+                            badge="MOST POPULAR"
+                            extra="30 DAY FREE TRIAL"
+                            title="Hulu"
+                            price="$6.99/MONTH"
+                        />
+                        <PlanColumnHeader
+                            extra="30 DAY FREE TRIAL"
+                            title="Hulu (No Ads)"
+                            price="$12.99/MONTH"
+                        />
+                        <PlanColumnHeader
+                            extra="DISNEY+, ESPN+,"
+                            title="Hulu + Live TV"
+                            price="$69.99/MONTH"
+                        />
                     </StyledPlanTableHeader>
+                    <StyledPlanTableRow>
+                    </StyledPlanTableRow>
                 </StyledPlanTable>
             </StyledPlanContent>
         </StyledPlan>
@@ -59,7 +81,23 @@ const Bundle = ({ toggle, isOn }) => {
     );
 }
 
-
+const PlanColumnHeader = ({ badge, extra, title, price, onClick = () => { } }) => {
+    return (
+        <StyledPlanColumnHeader>
+            {badge && <StyledBadge>{badge}</StyledBadge>}
+            <p>{extra}</p>
+            <p><em>{title}</em></p>
+            <LargeButton
+                onClick={onClick}
+                text={price}
+                color="black"
+                padding={15}
+                full={true}
+                transition={true}
+            />
+        </StyledPlanColumnHeader>
+    );
+}
 
 const Switch = ({ toggle, isOn }) => {
     return (

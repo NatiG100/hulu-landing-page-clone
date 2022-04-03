@@ -41,10 +41,11 @@ export const StyledPlanTableHeader = styled.div`
     border-top: 1px solid #0002;
     border-bottom: 1px solid #0002;
     margin-top: 60px;
-    padding-top:15px;
-    padding-bottom: 15px;
+    padding-top:25px;
+    padding-bottom: 25px;
     display:grid ;
     grid-template-columns:2fr 1fr 1fr 1fr ;
+    gap:15px;
 `;
 export const StyledBundle = styled.div`
     max-width:250px ;
@@ -105,3 +106,50 @@ export const StyledSwitchKnob = styled.div`
     border-radius: 40px;
 `;
 ////////////////////////////
+
+
+//////////PLAN COLUMN HEADER///////////////
+export const StyledPlanColumnHeader = styled.div`
+    height: 100%;
+    display:flex ;
+    flex-direction:column ;
+    gap:5px;
+    justify-content:flex-end ;
+    align-items:center ;
+    *{
+    }
+    p{
+        font-weight:700 ;
+        font-size:15px ;
+        color:#ababab
+    }
+    em{
+        font-weight:700 ;
+
+        color:#292C33;
+        font-size:18px ;
+    }
+`;
+export const StyledBadge = styled.div`
+    width:max-content ;
+    padding: 8px 20px 8px 20px;
+    font-size: 11px;
+    color:black;
+    opacity:95% ;
+    font-weight:700 ;
+    background-color:#1ce783 ;
+    border-radius:40px ;
+    margin:15px;
+`;
+
+
+/////TABLE BODY///////
+export const StyledPlanTableRow = styled.div`
+    width:100% ;
+    border-bottom: 1px solid #0002;
+    padding-top:25px;
+    padding-bottom: 25px;
+    display:grid ;
+    grid-template-columns:2fr 1fr 1fr 1fr ;
+    gap:15px;
+`;
