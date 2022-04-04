@@ -83,6 +83,7 @@ export const Footer = () => {
                 <a>Do Not Sell My Personal Information</a>
                 <a>Your California Privacy Rights</a>
                 <a>TV Parental Guidelines</a>
+                <p>Sitemap</p>
             </StyledLinks>
         </StyledFooter>
     );

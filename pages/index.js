@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Advertisment from '../src/components/Advertisment'
+import Footer from '../src/components/Footer'
 import Header from '../src/components/Header'
 import LiveSports from '../src/components/LiveSports'
 import LiveTVSection from '../src/components/LiveTVSection'
@@ -15,6 +16,7 @@ export default function Home() {
       <LiveTVSection />
       <LiveSports />
       <Plan />
+      <Footer />
     </>
   )
 }
