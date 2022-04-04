@@ -41,11 +41,13 @@ export const StyledPlanTableHeader = styled.div`
     border-top: 1px solid #0002;
     border-bottom: 1px solid #0002;
     margin-top: 60px;
-    padding-top:25px;
-    padding-bottom: 25px;
+    
     display:grid ;
     grid-template-columns:2fr 1fr 1fr 1fr ;
-    gap:15px;
+    position:sticky ;
+    top:0px;
+    background-color:white ;
+    position:-webkit-sticky ;
 `;
 export const StyledBundle = styled.div`
     max-width:250px ;
@@ -129,6 +131,13 @@ export const StyledPlanColumnHeader = styled.div`
         color:#292C33;
         font-size:18px ;
     }
+    background-color:${({ darkBg }) => darkBg ? "#efefef" : "#fff"} ;
+    height:100% ;
+    padding-top:25px;
+    padding-bottom:25px;
+    button{
+        width:90% ;
+    }
 `;
 export const StyledBadge = styled.div`
     width:max-content ;
@@ -147,9 +156,26 @@ export const StyledBadge = styled.div`
 export const StyledPlanTableRow = styled.div`
     width:100% ;
     border-bottom: 1px solid #0002;
-    padding-top:25px;
-    padding-bottom: 25px;
+    
     display:grid ;
     grid-template-columns:2fr 1fr 1fr 1fr ;
-    gap:15px;
+`;
+
+export const StyledPlanTableCell = styled.div`
+padding-top:20px;
+    padding-bottom: 20px;
+    align-self:center ;
+    font-size:${({ small }) => small ? "16px" : "18px"};
+    ${({ left }) => (left && "text-align:left;")}
+    font-weight:400 ;
+    img{
+        margin-bottom:-2px ;
+        margin-left:2px ;
+    }
+    background-color:${({ darkBg }) => darkBg ? "#efefef" : "#fff"} ;
+
+    
+    ${({ light }) => (light && "color:#cecece;")}
+    width:100% ;
+    height:100% ;
 `;

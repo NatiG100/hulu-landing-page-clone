@@ -14,9 +14,10 @@ import {
     StyledSwitch,
     StyledBadge,
     StyledPlanColumnHeader,
-    StyledPlanTableRow
+    StyledPlanTableRow,
+    StyledPlanTableCell,
 } from './style';
-
+import plan from '../../assets/data/plan';
 const Plan = () => {
     const [isOn, setIsOn] = useState(false);
     const toggle = () => {
@@ -30,8 +31,10 @@ const Plan = () => {
                     <p>No hidden fees, equipment rentals, or installation appointments.</p>
                     <p><em>Switch plans or cancel anytime.^^</em></p>
                 </StyledPlanHeader>
-                <StyledPlanTable>
+                <div>
 
+                </div>
+                <StyledPlanTable>
                     <StyledPlanTableHeader>
                         <Bundle
                             isOn={isOn}
@@ -47,6 +50,7 @@ const Plan = () => {
                             extra="30 DAY FREE TRIAL"
                             title="Hulu (No Ads)"
                             price="$12.99/MONTH"
+                            darkBg={true}
                         />
                         <PlanColumnHeader
                             extra="DISNEY+, ESPN+,"
@@ -55,7 +59,27 @@ const Plan = () => {
                         />
                     </StyledPlanTableHeader>
                     <StyledPlanTableRow>
+                        <StyledPlanTableCell
+                            small={true}
+                            left={true}
+                        >
+                            Monthly price
+                        </StyledPlanTableCell>
+                        <StyledPlanTableCell>
+                            $6.99/mo
+                        </StyledPlanTableCell>
+                        <StyledPlanTableCell darkBg={true}>
+                            $12.99/mo
+                        </StyledPlanTableCell>
+                        <StyledPlanTableCell>
+                            $69.99/mo
+                        </StyledPlanTableCell>
                     </StyledPlanTableRow>
+                    {
+                        plan.map((planRow, planRowIndex) => (
+                            <Row row={planRow} key={planRowIndex} />
+                        ))
+                    }
                 </StyledPlanTable>
             </StyledPlanContent>
         </StyledPlan>
@@ -81,9 +105,9 @@ const Bundle = ({ toggle, isOn }) => {
     );
 }
 
-const PlanColumnHeader = ({ badge, extra, title, price, onClick = () => { } }) => {
+const PlanColumnHeader = ({ darkBg = false, badge, extra, title, price, onClick = () => { } }) => {
     return (
-        <StyledPlanColumnHeader>
+        <StyledPlanColumnHeader darkBg={darkBg}>
             {badge && <StyledBadge>{badge}</StyledBadge>}
             <p>{extra}</p>
             <p><em>{title}</em></p>
@@ -105,5 +129,28 @@ const Switch = ({ toggle, isOn }) => {
             <StyledSwitchRack isOn={isOn} />
             <StyledSwitchKnob isOn={isOn} />
         </StyledSwitch>
+    );
+}
+
+const Row = ({ row }) => {
+    return (
+        <StyledPlanTableRow>
+            <StyledPlanTableCell
+                small={true}
+                left={true}
+            >
+                {row.title.txt}
+                {row.title.i && <img src="/plan-table/i.svg" />}
+            </StyledPlanTableCell>
+            <StyledPlanTableCell light={true}>
+                {row.plan1 ? <img src="/plan-table/check.svg" /> : "—"}
+            </StyledPlanTableCell>
+            <StyledPlanTableCell darkBg={true} light={true}>
+                {row.plan2 ? <img src="/plan-table/check.svg" /> : "—"}
+            </StyledPlanTableCell>
+            <StyledPlanTableCell light={true}>
+                {row.plan3 ? <img src="/plan-table/check.svg" /> : "—"}
+            </StyledPlanTableCell>
+        </StyledPlanTableRow>
     );
 }
